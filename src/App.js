@@ -22,6 +22,10 @@ function App() {
       });
   };
 
+  useEffect(() => {
+    pedidoGet();
+  });
+
   return (
     <div className="App">
       <br />
@@ -56,7 +60,36 @@ function App() {
             <th>Cep</th>
           </tr>
         </thead>
-        <tbody></tbody>
+        <tbody>
+          {data.map((aluno) => (
+            <tr key={aluno.id}>
+              <td>{aluno.id}</td>
+              <td>{aluno.nome}</td>
+              <td>{aluno.idade}</td>
+              <td>{aluno.rg}</td>
+              <td>{aluno.statusaluno}</td>
+              <td>{aluno.numeromatricula}</td>
+              <td>{aluno.areainteresse}</td>
+              <td>{aluno.habilidades}</td>
+              <td>{aluno.experiencias}</td>
+              <td>{aluno.disponibilidadehorario}</td>
+              <td>{aluno.curriculo}</td>
+              <td>{aluno.cpf}</td>
+              <td>{aluno.cidade}</td>
+              <td>{aluno.datanascimento}</td>
+              <td>{aluno.nivelescolaridade}</td>
+              <td>{aluno.telefone}</td>
+              <td>{aluno.endereco}</td>
+              <td>{aluno.genero}</td>
+              <td>{aluno.bairro}</td>
+              <td>{aluno.cep}</td>
+              <td>
+                <button className="btn btn-primary">Editar</button> {"  "}
+                <button className="btn btn-danger">Excluir</button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
       </table>
     </div>
   );
